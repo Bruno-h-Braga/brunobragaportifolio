@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meu portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                Meu portfólio
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#about" class="scroll-link">Sobre</a></li>
+                <li><a href="#contact" class="scroll-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="header-content">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/bruno-braga-040508332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank">
+                    <img src="img/linkedin_logo.png" alt="LinkedIn" width="50" height="50">
+                </a>
+                <a href="mailto:bhlb@cesar.school" target="_blank">
+                    <img src="img/emaill.png" alt= "Email" width="70" height="70">
+                </a>
+                <a href="https://www.instagram.com/brunoh.braga?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank">
+                    <img src="img/instagram_logo.png" alt="Instagram" width="50" height="50">
+                </a>
+            </div>
+            <div>
+                <img src="img/brunoLeite.png" alt="Profile Image" class="foto_perfil">
+                <h1>Bruno Henrique Leite Braga</h1>
+                <h2>Estudante de ADS</h2>
+            </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <hr>
+        <h2>Sobre mim</h2>
+        <div class="star"></div>
+        <p>Decidi ingressar nessa área por conta da grande oportunidade de crecimento na mesma e por ser algo que sempre me gerou interesse, por enquento ainda estou aprendendo, mas um dia serei um grande profissional. Gosto de música, tocar guitarra, treinar e de assistir bons filmes.</p>
+        <p>Para mais informações entre em contato comigo</p>
+    </section>
+    <hr>
+    <section id="contact" class="contact-section">
+        <h2>Fala comigo!</h2>
+        <div class="star">&#9733;</div>
+        <form>
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Escreva seu nome">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Escreva seu email">
+
+            <label for="phone">Numero de telefone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Escreva seu numero de telefone">
+
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" placeholder="Escreva uma mensagem"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script>
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetID = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetID);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 50,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background-color: #052f27;
+        padding: 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .nav-links {
+        list-style: none;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .nav-links li a:hover {
+        color: #1ABC9C;
+    }
+
+    .header {
+        background-color: #1ABC9C;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .header-content {
+        color: white;
+
+
+    }
+
+    .foto_perfil {
+        width: 25rem;
+
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-top: 20px;
+    }
+
+    .star {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .about-section {
+        background-color: #1ABC9C;
+        color: white;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .contact-section {
+        background-color: #1ABC9C;
+        color: white;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 36px;
+    }
+
+    .about-section p,
+    .contact-section p {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    form label {
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: left;
+        width: 100%;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    form button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #052f27;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #16A085;
+    }
+
+    .social-icons {
+        margin-top: 200px;
+        text-align: center;
+    }
+
+    .social-icons img {
+        margin: 0 10px;
+        transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.2);
+        /*Aumenta o tamanho ao passar o mouse*/
+    }
+</style>
